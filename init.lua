@@ -13,4 +13,6 @@ require('bufferline_Config')
 require('alpha_Config')
 require('notify_Config')
 require('key_mappings')
+require'hop'.setup()
+require('hop_Config')
 
