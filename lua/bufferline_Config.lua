@@ -11,6 +11,7 @@ local function map(mode, lhs, rhs, opts)
 end
 map('n', '<A-,>', ':BufferLineCyclePrev<CR>')
 map('n', '<A-.>', ':BufferLineCycleNext<CR>') 
+map('n', '<C-w>', ':BufferLinePickClose<CR>')
 
 
 

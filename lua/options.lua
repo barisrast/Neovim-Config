@@ -1,15 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-g.mapleader = ','
-
 opt.encoding = "utf-8"
 opt.title = true
 opt.clipboard = "unnamedplus"
@@ -17,8 +8,9 @@ opt.clipboard = "unnamedplus"
 
 -- Indentline
 opt.expandtab = true
-opt.shiftwidth = 4
+opt.shiftwidth = 2
 opt.smartindent = true
+opt.tabstop = 2
 
 -- disable tilde on end of buffer: https://github.com/neovim/neovim/pull/8546#issuecomment-643643758
 --opt.fillchars = options.fillchars
@@ -29,6 +21,7 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
+--opt.relativenumber = true
 
 
 -- disable nvim intro
@@ -39,16 +32,12 @@ opt.splitright = true
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
-opt.tabstop = 4
 opt.termguicolors = true
 opt.timeoutlen = 1000 --waits 10 ms for a key sequence to complete
 
 -- interval for writing swap file to disk, also used by gitsigns
 --opt.updatetime = options.updatetime
-map('n', '<C-s>', ':w<CR>')
--- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':nohl<CR>')
- 
+
 
 -- disable some builtin vim plugins
 local disabled_built_ins = {
